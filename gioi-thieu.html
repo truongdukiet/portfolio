@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trương Dũ Kiệt - Web Developer Portfolio & CV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: #1e293b;
+            border-radius: 1rem;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(56, 189, 248, 0.4));
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar antialiased selection:bg-amber-500 selection:text-slate-900">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider gradient-text flex items-center gap-2">
+                <i class="fa-solid fa-code text-amber-500"></i> TDK.DEV
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-amber-400 transition-colors">Hồ sơ</a>
+                <a href="#education" class="hover:text-amber-400 transition-colors">Học vấn</a>
+                <a href="#experience" class="hover:text-amber-400 transition-colors">Kinh nghiệm</a>
+                <a href="#project" class="hover:text-amber-400 transition-colors">Đồ án</a>
+                <a href="#skills" class="hover:text-amber-400 transition-colors">Kỹ năng</a>
+            </nav>
+            <a href="mailto:dukiettruong955@gmail.com" class="px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:from-amber-400 hover:to-amber-500 transition-all shadow-md shadow-amber-500/20">
+                <i class="fa-solid fa-paper-plane mr-1"></i> Liên hệ
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-28 pb-16 md:pt-36 md:pb-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Profile Avatar Card -->
+            <div class="md:col-span-4 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-cyan-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-2 border-slate-700 bg-slate-900 shadow-2xl">
+                        <img src="./img/hinh-anh.jpg" 
+                             alt="Trương Dũ Kiệt" 
+                             class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Truong+Du+Kiet&background=1e293b&color=f59e0b&size=400';">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Info -->
+            <div class="md:col-span-8 text-center md:text-left space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span> Sẵn sàng cho cơ hội mới
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                    TRƯƠNG DŨ KIỆT
+                </h1>
+                <h2 class="text-lg sm:text-xl font-semibold gradient-text">
+                    SINH VIÊN CHUYÊN NGÀNH LẬP TRÌNH WEB
+                </h2>
+                
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                    Tốt nghiệp chuyên ngành Lập trình Web tại FPT Polytechnic TP.HCM, thế mạnh về <strong class="text-amber-400 font-semibold">PHP, HTML/CSS</strong> cùng tư duy logic vững vàng. Tác phong làm việc chủ động, trách nhiệm, luôn chú trọng viết mã nguồn tối ưu và nâng cao hiệu năng để mang lại sản phẩm web chất lượng.
+                </p>
+
+                <!-- Contact Badges -->
+                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3 text-xs sm:text-sm text-slate-300">
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-700/60 hover:border-amber-500/40 transition">
+                        <i class="fa-solid fa-phone text-amber-400"></i>
+                        <span>0796994560</span>
+                    </div>
+                    <a href="mailto:dukiettruong955@gmail.com" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-700/60 hover:border-amber-500/40 transition hover:text-amber-400">
+                        <i class="fa-solid fa-envelope text-amber-400"></i>
+                        <span>dukiettruong955@gmail.com</span>
+                    </a>
+                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-700/60 hover:border-amber-500/40 transition">
+                        <i class="fa-solid fa-cake-candles text-amber-400"></i>
+                        <span>29/07/2003</span>
+                    </div>
+                    <a href="https://github.com/truongdukiet/datn02.git" target="_blank" rel="noopener" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-700/60 hover:border-amber-500/40 transition hover:text-amber-400">
+                        <i class="fa-brands fa-github text-amber-400"></i>
+                        <span>github.com/truongdukiet</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Goals Card Grid -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-amber-500 hover:translate-y-[-2px] transition duration-300">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
+                        <i class="fa-solid fa-bullseye text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Mục tiêu ngắn hạn</h3>
+                </div>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Tới <strong class="text-amber-400">tháng 06/2027</strong>, chính thức gia nhập <strong class="text-white">Công ty Minh Phương</strong> ở vị trí lập trình viên. Tối ưu hóa hiệu suất sản phẩm ngay từ giai đoạn đầu bằng việc vận dụng thành thạo kiến thức kỹ thuật <span class="text-cyan-400 font-medium">Laravel/MySQL</span> kết hợp cùng tư duy <span class="text-cyan-400 font-medium">Marketing Online</span>.
+                </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-cyan-500 hover:translate-y-[-2px] transition duration-300">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Mục tiêu dài hạn</h3>
+                </div>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Phát triển trở thành <strong class="text-cyan-400">Chuyên gia Tư vấn Giải pháp Công nghệ (IT Solution Consultant)</strong>. Tận dụng năng lực ngoại ngữ (<span class="text-amber-400 font-medium">TOEIC 700+</span>) để quản lý các dự án đa quốc gia, đóng góp tích cực vào chiến lược số hóa và sự phát triển bền vững của Công ty Minh Phương.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-graduation-cap text-amber-500"></i> GIÁO DỤC & HỌC VẤN
+                </h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- FPT Polytechnic -->
+                <div class="glass-card p-6 rounded-2xl relative overflow-hidden group hover:border-amber-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">2023 - 2025</span>
+                            <h3 class="text-xl font-bold text-white mt-2">FPT POLYTECHNIC</h3>
+                            <p class="text-xs text-slate-400 font-medium">FPT Education (TP.HCM)</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-amber-400 border border-slate-700">
+                            <i class="fa-solid fa-laptop-code text-xl"></i>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-400 text-xs"></i>
+                            <span>Chuyên ngành: <strong class="text-white">Lập trình Web</strong></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                            <span>GPA: <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">2.93</span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FPT University -->
+                <div class="glass-card p-6 rounded-2xl relative overflow-hidden group hover:border-cyan-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">2026</span>
+                            <h3 class="text-xl font-bold text-white mt-2">ĐẠI HỌC FPT</h3>
+                            <p class="text-xs text-slate-400 font-medium">FPT Fit University</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 border border-slate-700">
+                            <i class="fa-solid fa-building-columns text-xl"></i>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyan-400 text-xs"></i>
+                            <span>Chuyên ngành: <strong class="text-white">Kỹ thuật Phần mềm</strong></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center justify-center gap-3">
+                <i class="fa-solid fa-briefcase text-amber-500"></i> KINH NGHIỆM LÀM VIỆC
+            </h2>
+            <div class="w-16 h-1 bg-amber-500 mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- NASANI Experience with QR Code Highlight -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-amber-500/30 shadow-xl shadow-amber-500/5 hover:border-amber-500/60 transition">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                    <div>
+                        <span class="px-3 py-1 text-xs font-bold rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">10/2025 - 02/2026</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-2 flex items-center gap-2">
+                            CÔNG TY CÔNG NGHỆ PHẦN MỀM NASANI <span class="text-xs text-slate-400 font-normal">(TP.HCM)</span>
+                        </h3>
+                        <p class="text-amber-400 font-semibold text-sm sm:text-base mt-1">
+                            <i class="fa-solid fa-user-gear mr-1"></i> Nhân viên Tư vấn & Triển khai Website
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+                    <!-- Work Description Details -->
+                    <div class="lg:col-span-8 space-y-4">
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-sliders"></i> Tư vấn & Thiết kế Giải pháp
+                            </h4>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Phân tích mô hình kinh doanh để tối ưu hóa UI/UX và tính năng hệ thống; chủ trì giải pháp tái cấu trúc/nâng cấp giao diện cho các doanh nghiệp có website lỗi thời.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved"></i> Quản lý Chất lượng & SEO
+                            </h4>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Trực tiếp kiểm thử (Testing), khắc phục lỗi kỹ thuật và chuẩn hóa cấu trúc SEO nội trang, tối ưu hạ tầng kỹ thuật SEO đạt chuẩn Google trước khi bàn giao.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-rocket"></i> Các dự án trọng điểm bàn giao
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <a href="http://hoachatthanhphuong.com" target="_blank" class="p-2 rounded bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-amber-400 transition flex items-center justify-between">
+                                    <span>Hóa chất Thành Phương</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                                <a href="http://hoaanhtravel.com" target="_blank" class="p-2 rounded bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-amber-400 transition flex items-center justify-between">
+                                    <span>Du lịch Hoa Anh</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                                <a href="http://hotelmimosabinhchanh.com" target="_blank" class="p-2 rounded bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-amber-400 transition flex items-center justify-between">
+                                    <span>Hotel MIMOSA</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                                <a href="http://baovekimlongcuchi.com" target="_blank" class="p-2 rounded bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-amber-400 transition flex items-center justify-between">
+                                    <span>Bảo vệ Kim Long</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-chalkboard-user"></i> Chuyển giao & Đào tạo
+                            </h4>
+                            <p class="text-sm text-slate-300">
+                                Đào tạo quy trình vận hành hệ thống và huấn luyện kỹ năng tư vấn thực chiến cho đội ngũ nhân sự trước khi nghiệm thu dự án.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- QR Code Widget Box -->
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center p-5 rounded-xl bg-slate-900/90 border border-amber-500/40 text-center relative group">
+                        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-qrcode text-base"></i> Mã QR Check-Code NASANI
+                        </div>
+                        
+                        <div class="p-3 bg-white rounded-xl shadow-lg border-2 border-amber-500/50 transform group-hover:scale-105 transition duration-300">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nasani.vn/check-code/18c1932d87fb2d0250f2b3235f3802c9" 
+                                 alt="QR Check-Code NASANI" 
+                                 class="w-36 h-36 object-contain">
+                        </div>
+
+                        <p class="text-[11px] text-slate-400 mt-3 mb-2">Quét mã QR để xem xác thực mã code</p>
+                        
+                        <a href="https://nasani.vn/check-code/18c1932d87fb2d0250f2b3235f3802c9" 
+                           target="_blank" 
+                           rel="noopener"
+                           class="w-full py-2 px-3 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-semibold transition flex items-center justify-center gap-2 truncate">
+                            <i class="fa-solid fa-link"></i> nasani.vn/check-code/...
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mỹ Võ Media Experience -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-slate-700 transition">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-4 border-b border-slate-800">
+                    <div>
+                        <span class="px-3 py-1 text-xs font-bold rounded-full bg-slate-800 text-slate-300 border border-slate-700">05/2025 - 08/2025</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">
+                            CÔNG TY CÔNG NGHỆ & TRUYỀN THÔNG MỸ VÕ <span class="text-xs text-slate-400 font-normal">(TP.HCM)</span>
+                        </h3>
+                        <p class="text-cyan-400 font-semibold text-sm sm:text-base mt-1">
+                            <i class="fa-solid fa-pen-nib mr-1"></i> Thực Tập Sinh Biên Soạn & Giải Đề Thi Lập Trình
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-amber-400 text-lg mb-2"><i class="fa-solid fa-file-pen"></i></div>
+                        <h4 class="font-bold text-sm text-white mb-1">Biên soạn & Quản lý Nội dung</h4>
+                        <p class="text-xs text-slate-400">Soạn thảo, thẩm định và giải các bộ đề thi môn Tin học & Khoa học Máy tính theo chuẩn chương trình.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-amber-400 text-lg mb-2"><i class="fa-solid fa-video"></i></div>
+                        <h4 class="font-bold text-sm text-white mb-1">Sáng tạo Nội dung Số</h4>
+                        <p class="text-xs text-slate-400">Trực tiếp sản xuất và quay video hướng dẫn giải bài tập lập trình HTML/CSS chuyên nghiệp bằng phần mềm OBS Studio.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-amber-400 text-lg mb-2"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h4 class="font-bold text-sm text-white mb-1">Tối ưu Phương pháp Giảng dạy</h4>
+                        <p class="text-xs text-slate-400">Phác thảo kịch bản và truyền tải kiến thức kỹ thuật phức tạp thành nội dung trực quan, dễ hiểu.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Graduation Project Section -->
+    <section id="project" class="py-16 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-diagram-project text-amber-500"></i> ĐỒ ÁN TỐT NGHIỆP
+                </h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border-l-4 border-amber-500 shadow-2xl relative overflow-hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">05/2025 - 09/2025</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Hệ thống Kinh doanh Nội thất Next Gen</h3>
+                        <p class="text-slate-400 text-sm mt-1">
+                            <span class="text-amber-400 font-semibold"><i class="fa-solid fa-crown mr-1"></i> Nhóm trưởng (4 người)</span>
+                        </p>
+                    </div>
+                    <a href="https://github.com/truongdukiet/datn02.git" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 text-xs font-semibold transition flex items-center gap-2">
+                        <i class="fa-brands fa-github text-base"></i> Xem GitHub Repository
+                    </a>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="mb-6 flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-amber-300 border border-slate-700">Laravel (REST API)</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-cyan-300 border border-slate-700">ReactJS</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-emerald-300 border border-slate-700">MySQL</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-blue-300 border border-slate-700">Trello</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-purple-300 border border-slate-700">Git/GitHub</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                        <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-users-gear text-amber-400"></i> Quản lý Dự án
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Chủ trì điều hành nhóm 4 người, phân chia công việc chi tiết trên Trello và kiểm soát chặt chẽ các phiên bản mã nguồn qua GitHub.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                        <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-database text-amber-400"></i> Thiết kế Cơ sở Dữ liệu
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Thiết kế và tối ưu chuẩn hóa Cơ sở dữ liệu (Database Schema) đáp ứng đầy đủ và chuẩn xác các nghiệp vụ kinh doanh nội thất phức tạp.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                        <h4 class="font-bold text-white text-sm mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group text-amber-400"></i> Phát triển Full-stack & UI/UX
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Xây dựng hệ thống RESTful API kết nối với Frontend ReactJS; nghiên cứu và cải thiện giao diện/trải nghiệm người dùng (UI/UX) tối ưu hóa luồng đặt hàng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center justify-center gap-3">
+                <i class="fa-solid fa-gears text-amber-500"></i> CHUYÊN MÔN & KỸ NĂNG
+            </h2>
+            <div class="w-16 h-1 bg-amber-500 mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Technical Skills -->
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
+                    <i class="fa-solid fa-code text-amber-400"></i> Kỹ Năng Chuyên Môn
+                </h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-slate-200">PHP & Framework (Laravel / REST API)</span>
+                            <span class="text-amber-400">85%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-800">
+                            <div class="h-2 rounded-full bg-gradient-to-r from-amber-500 to-amber-400" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-slate-200">HTML5 / CSS3 / JavaScript / UI-UX</span>
+                            <span class="text-amber-400">90%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-800">
+                            <div class="h-2 rounded-full bg-gradient-to-r from-amber-500 to-cyan-400" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-slate-200">Quản lý Agile (Trello & GitHub)</span>
+                            <span class="text-amber-400">88%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-800">
+                            <div class="h-2 rounded-full bg-gradient-to-r from-amber-500 to-emerald-400" style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-slate-200">Tư vấn Giải pháp Web & SEO Technical</span>
+                            <span class="text-amber-400">80%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-800">
+                            <div class="h-2 rounded-full bg-gradient-to-r from-amber-500 to-indigo-400" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-slate-200">Marketing Online & Tối ưu chuyển đổi</span>
+                            <span class="text-amber-400">75%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-800">
+                            <div class="h-2 rounded-full bg-gradient-to-r from-amber-500 to-rose-400" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills & Languages -->
+            <div class="glass-card p-6 rounded-2xl">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
+                    <i class="fa-solid fa-user-check text-cyan-400"></i> Kỹ Năng Mềm & Ngoại Ngữ
+                </h3>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">1</div>
+                        <span class="text-xs font-semibold text-slate-200">Kỹ năng lắng nghe</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">2</div>
+                        <span class="text-xs font-semibold text-slate-200">Kỹ năng làm việc nhóm</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">3</div>
+                        <span class="text-xs font-semibold text-slate-200">Làm việc dưới áp lực</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold">4</div>
+                        <span class="text-xs font-semibold text-slate-200">Kỹ năng học hỏi nhanh</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-language text-2xl text-amber-400"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Ngoại Ngữ (Tiếng Anh)</h4>
+                                <p class="text-xs text-slate-400">Định hướng quản lý dự án đa quốc gia</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-xs font-extrabold">TOEIC 700+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© 2026 Trương Dũ Kiệt. Designed with HTML & Tailwind CSS.</p>
+            <p class="mt-1 text-slate-600">Đường link check code NASANI: <a href="https://nasani.vn/check-code/18c1932d87fb2d0250f2b3235f3802c9" class="underline hover:text-amber-400">nasani.vn/check-code/18c1932d...</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
